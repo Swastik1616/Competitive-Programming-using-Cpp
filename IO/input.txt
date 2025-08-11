@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 swastik
-=======
-
->>>>>>> 13adc6f6f1d8af6a5c881eea43b8901da508908e
