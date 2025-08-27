@@ -11,7 +11,7 @@ int main() {
     while(t--){
         int x;
         cin >> x;
-        if(x>98) cout "YES\n";
+        if(x>98) cout << "YES\n";
         else cout << "NO\n";
     }
 }
