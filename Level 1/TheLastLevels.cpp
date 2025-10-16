@@ -1,5 +1,5 @@
 /* Problem Link -
-https://www.codechef.com/learn/course/cpp-beginner-v2-p1/BP00BC16_V2/problems/LASTLEVELS
+https://www.codechef.com/practice/course/logical-problems/DIFF800/problems/LASTLEVELS
 */
 
 #include <bits/stdc++.h>
