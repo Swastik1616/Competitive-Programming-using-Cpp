@@ -4,6 +4,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void solve(){
+        int n;
+        cin >> n;
+        vector<int> v1;
+        vector<int> v2 = {10, 100, 1000, 10000, 100000};
+
+        for(auto &it:v2){
+            if (n % it != 0)
+            {
+                v1.push_back(n % it);
+                n -= n % it;
+            }
+        }
+
+        cout << v1.size() << endl; // number of round numbers
+        for (auto &it:v1) // round numbers
+        {
+            cout << it << " ";
+        }
+        cout << endl;    
+}
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}
+
+/* beginner code - 
+#include<bits/stdc++.h>
+using namespace std;
+
 int main(){
     int t;
     cin >> t;
@@ -46,3 +81,4 @@ int main(){
     }
     return 0;
 }
+*/
