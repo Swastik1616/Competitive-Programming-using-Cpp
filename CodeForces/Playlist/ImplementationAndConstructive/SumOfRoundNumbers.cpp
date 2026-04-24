@@ -11,16 +11,14 @@ void solve(){
         vector<int> v2 = {10, 100, 1000, 10000, 100000};
 
         for(auto &it:v2){
-            if (n % it != 0)
-            {
+            if (n % it != 0){
                 v1.push_back(n % it);
                 n -= n % it;
             }
         }
 
         cout << v1.size() << endl; // number of round numbers
-        for (auto &it:v1) // round numbers
-        {
+        for (auto &it:v1){ // round numbers
             cout << it << " ";
         }
         cout << endl;    
