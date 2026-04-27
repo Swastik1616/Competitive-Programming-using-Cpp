@@ -17,18 +17,16 @@ int main(){
 
     sort(v.begin(),v.end()); // by default sorting based on 1st part of pair.
 
-    int ans=0;
-    vector<int> indices; 
+    vector<int> ans; 
     for(auto &it:v){
         if(it.first<=k) { // if #days<=total(k) then we can learn that instrument so ans++ and push corresponding index to print and then subtract those days from total.
-            ans++;
-            indices.push_back(it.second);
+            ans.push_back(it.second);
             k -= it.first;
         }
     }
 
-    cout << ans << endl; // output
-    for(auto &it:indices){
+    cout << ans.size() << endl; // output
+    for(auto &it:ans){
         cout << it << " ";
     }
     cout << endl;
