@@ -1,6 +1,5 @@
 // Problem Link - https://www.codechef.com/practice/course/1to2stars/LP1TO205/problems/LUCKFOUR
 
-
 #include <iostream>
 using namespace std;
 
