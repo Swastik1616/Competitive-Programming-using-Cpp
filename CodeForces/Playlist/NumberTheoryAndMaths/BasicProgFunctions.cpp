@@ -1,19 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*
 // Prime or not - O(n)
-bool checkPrime(int n){
+bool checkPrime1(int n){
     if(n==0 || n==1) return false;
     for(int i=2;i<n;i++){
         if(n%i==0) return false;
     }
     return true;
 }
-*/
+
 
 // Prime or not - O(sqrt(n))
-bool checkPrime(int n){
+bool checkPrime2(int n){
     if(n==0 || n==1) return false;
     for(int i=2;i*i<=n;i++){ // i<=sqrt(n) is same as i*i<=n
         if(n%i==0) return false;
@@ -21,17 +20,17 @@ bool checkPrime(int n){
     return true;
 }
 
-/* 
+
 // Factors - O(n)
-void printFactors(int n){
+void printFactors1(int n){
     for(int i=1;i<=n;i++){
         if(n%i==0) cout << i << " ";
     }
 }
-*/
+
 
 // Factors - O(sqrt(n))
-void printFactors(int n){
+void printFactors2(int n){
     for(int i=1;i*i<=n;i++){ 
         if(n%i==0 && i!=n/i) cout << i << " " << n/i << " ";
     }
@@ -57,43 +56,51 @@ vector<bool> sieve(int n){ // function of sieve which returns an array
     return primes; // returning this array in which all positions with true are prime and rest not prime
 }
 
+int findPow(int a,int b){ // TC = O(b)
+    int ans = 1;
+    for(int i=1;i<=b;i++){
+        ans *= a;
+    }
+    return ans;
+}
 
+int binExp(int a,int b){ // TC = O(logb)
+    if(b==0) return 1;
+    if(b==1) return a;
 
+    int x = binExp(a,b/2);
+    int ans = 0;
+    
+    if(b%2==0) ans = x*x;
+    else ans = x*x*a;
 
+    return ans;
+}
 
+int modExp(int a,int b,int m){
+    if(b==0) return 1;
+    if(b==1) return a % m;
 
+    int x = modExp(a,b/2,m);
+    int ans = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if(b%2==0) ans = ((x % m)*(x % m)) % m;
+    else {
+        ans = ((x % m)*(x % m)) % m;
+        ans = ((ans % m)*(a % m)) % m;
+    }
+    return ans;
+}
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int a,b,m;
+    cin >> a >> b >> m;
+
+    //int ans = modExp(a,b,m);
+    cout << modExp(a,b,m);
 
     return 0;
 }
