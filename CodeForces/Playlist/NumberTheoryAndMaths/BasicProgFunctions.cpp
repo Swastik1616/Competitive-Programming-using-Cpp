@@ -92,15 +92,21 @@ int modExp(int a,int b,int m){
     return ans;
 }
 
+// GCD using Euclidian Algorithm - TC = O(logb)
+int gcd(int a,int b){
+    if(b==0) return a;
+    return gcd(b,a%b);
+}
+
+// LCM using product of 2 numbers = product of their lcm & gcd
+int lcm(int a,int b){
+    int ans = (a*b)/gcd(a,b);
+    return ans;
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    int a,b,m;
-    cin >> a >> b >> m;
-
-    //int ans = modExp(a,b,m);
-    cout << modExp(a,b,m);
-
+    cout << lcm(60,45);
     return 0;
 }
