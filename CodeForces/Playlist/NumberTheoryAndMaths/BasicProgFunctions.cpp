@@ -104,9 +104,37 @@ int lcm(int a,int b){
     return ans;
 }
 
+// factorial - O(n)
+int factorial(int n){
+    if(n==0 || n==1) return 1;
+    int fact = 1;
+    for(int i=1;i<=n;i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+// nCr or C(n,r) - using factorial
+int FactnCr(int n, int r){
+    if(r==0 || r==n) return 1; // bcoz nC0 & nCn = 1
+    if(r>n) return 0; 
+
+    int ans = factorial(n)/(factorial(r)*factorial(n-r));
+    return ans;
+}
+
+// reursive nCr bcoz nCr = (n-1)C(r-1) + (n-1)Cr
+int nCr(int n,int r){
+    if(r==0 || r==n) return 1; 
+    if(r>n) return 0; 
+
+    return nCr(n-1,r-1) + nCr(n-1,r);
+}
+
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    cout << lcm(60,45);
+    cout << nCr(4,2);
     return 0;
 }
