@@ -1,5 +1,9 @@
 // Problem Link - https://codeforces.com/problemset/problem/1665/A
 
+// a+b+c+d = n
+// gcd(a,b) = lcm(c,d) = 1
+// c=d=1, b=1, a = n-3;
+
 #include<bits/stdc++.h>
 using namespace std;
 
