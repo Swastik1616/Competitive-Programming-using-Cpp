@@ -20,7 +20,9 @@ int binarySearch(vector<int> &v, int target){
     return -1;
     // return l - lowerbound/index if elem would have been there
 }
-
+/* Lowerbound is the smallest index which is just
+   greater than or equal to the target value
+*/
 int lowerBound(vector<int> &v, int target){
     int n = v.size();
     int l = 0;
@@ -29,16 +31,18 @@ int lowerBound(vector<int> &v, int target){
 
     while(l<=r){
         int mid = (l+r)/2;
-        if(target>=v[mid]){
+        if(v[mid]>=target){
             ans = min(ans,mid);
-            r = mid - 1;
+            r = mid - 1; // move left
         }
-        else l = mid + 1;
+        else l = mid + 1; // move right
     }
 
     return ans;
 }
-
+/* Upper bound is the smallest index which is just 
+   greater than the target value
+*/
 int upperBound(vector<int> &v, int target){
     int n = v.size();
     int l = 0;
@@ -47,16 +51,16 @@ int upperBound(vector<int> &v, int target){
 
     while(l<=r){
         int mid = (l+r)/2;
-        if(target>v[mid]){ // only difference
+        if(v[mid]>target){ // only difference
             ans = min(ans,mid);
-            r = mid - 1;
+            r = mid - 1; // move left
         }
-        else l = mid + 1;
+        else l = mid + 1; // move right
     }
 
     return ans;
 }
-
+// if lowerbound==upperbound, it means target not present.
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
