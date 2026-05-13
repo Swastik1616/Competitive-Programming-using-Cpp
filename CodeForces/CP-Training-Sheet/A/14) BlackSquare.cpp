@@ -18,11 +18,15 @@ int main(){
     int ans = 0;
 
     for(auto &it:s){
-        if(it=='1') ans += v[0];
-        else if(it=='2') ans += v[1];
-        else if(it=='3') ans += v[2];
-        else ans += v[3];
+        ans += v[it - '1'];
     }
+
+    // for(auto &it:s){
+    //     if(it=='1') ans += v[0];
+    //     else if(it=='2') ans += v[1];
+    //     else if(it=='3') ans += v[2];
+    //     else ans += v[3];
+    // }
 
     cout << ans;
 
