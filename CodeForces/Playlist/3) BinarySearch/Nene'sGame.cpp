@@ -1,5 +1,9 @@
 // Problem Link - https://codeforces.com/contest/1956/problem/A
-// crazyyy
+// crazyyy observation - at the end of all rounds
+// the remaining number of people will be either
+// one less than the 1st number in array a 
+// or it will be directly that no. if it is even smaller
+
 #include<bits/stdc++.h>
 using namespace std;
 
