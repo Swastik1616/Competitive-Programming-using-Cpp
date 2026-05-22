@@ -1,5 +1,5 @@
 // Problem Link - https://codeforces.com/contest/2231/problem/B
-// upsolved, still wrong
+// upsolved
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -12,30 +12,25 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        vector<int> v(n),b;
+        vector<int> v(n);
         for(int i=0;i<n;i++){
             cin >> v[i];
         }
 
         int m = 0;
-        for(int i=0;i<n;i++){
-            if(v[i] > m) m = v[i];
-            if(v[i] < m) b.push_back(v[i]);
+        for(int i=1;i<n;i++){
+            if(v[i]<v[i-1]) m = max(m,v[i-1]-v[i]);
         }
-        //for(auto it:b) cout << it << " ";
-        if(b.size()){
-            int c = 0;
-            for(int i=0;i<b.size()-1;i++){
-                if(b[i]>b[i+1]){
-                    c=1;
-                    break;
-                }
-            }
-            if(c==1) cout << "NO\n";
-            else cout << "YES\n";    
+        for(int i=1;i<n;i++){
+            if(v[i]<v[i-1]) v[i] += m;
         }
-        else cout << "YES\n";
+        int c = 1;
+        for(int i=1;i<n;i++){
+            if(v[i]<v[i-1]) c = 0;
+        }
 
+        if(c) cout << "YES\n";
+        else cout << "NO\n";
     }
     return 0;
 }
