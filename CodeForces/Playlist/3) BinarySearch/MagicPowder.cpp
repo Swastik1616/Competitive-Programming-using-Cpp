@@ -4,7 +4,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool check(long long n,long long k,long long mid,vector<long long> &a,vector<long long> &b){
+bool checkReq(long long n,long long k,long long mid,vector<long long> &a,vector<long long> &b){
     for(long long i=0;i<n;i++){
         long long req = a[i] * mid;
         req -= b[i];
@@ -23,10 +23,10 @@ int main(){
     long long n,k;
     cin >> n >> k;
     
-    vector<long long> a(n),b(n);
+    vector<long long> A(n),B(n);
 
-    for(long long i=0;i<n;i++) cin >> a[i];
-    for(long long i=0;i<n;i++) cin >> b[i];
+    for(long long i=0;i<n;i++) cin >> A[i];
+    for(long long i=0;i<n;i++) cin >> B[i];
 
     long long l = 0;
     long long h = INT_MAX;
@@ -35,7 +35,7 @@ int main(){
     while(l<=h){
         long long mid = l + (h-l)/2;
 
-        if(check(n,k,mid,a,b)){
+        if(checkReq(n,k,mid,A,B)){
             ans = mid;
             l = mid + 1;
         }
