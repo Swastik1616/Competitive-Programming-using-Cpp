@@ -1,6 +1,6 @@
 // Problem Link - https://codeforces.com/contest/2232/problem/A
-// WA - will upsolve
-
+// WA during contest
+// upsolved 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -14,15 +14,19 @@ int main(){
     while(t--){
         int n;
         cin >> n;
-        int m = INT_MAX;
-        int M = 0;
+        vector<int> v(n);
+        for(int i=0;i<n;i++) cin >> v[i];
+
+        sort(v.begin(),v.end());
+        int m = v[n/2];
+        
+        int lc=0,rc=0;
         for(int i=0;i<n;i++){
-            int x;
-            cin >> x;
-            m = min(m,x);
-            M = max(M,x);
+            if(v[i]<m) lc++;
+            else if(v[i]>m) rc++;
         }
-        cout << (m+M)/2 << "\n";
+
+        cout << max(lc,rc) << "\n";
     }
     return 0;
 }
