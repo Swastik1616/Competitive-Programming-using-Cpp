@@ -31,7 +31,7 @@ int main(){
         int i = 0;
         while(k>0){
             int b = k%2;
-            if(b==1) ans += modExp(n,i,MOD);
+            if(b==1) ans = ((ans%MOD) + (modExp(n,i,MOD))%MOD)%MOD;
             i++;
             k/=2;
         }
