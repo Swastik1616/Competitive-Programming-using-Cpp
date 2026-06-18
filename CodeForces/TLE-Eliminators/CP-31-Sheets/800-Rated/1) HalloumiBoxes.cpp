@@ -20,14 +20,14 @@ int main(){
         vector<int> v(n);
         for(int i=0;i<n;i++) cin >> v[i];
 
-        bool flag = true;
+        bool is_sorted = true;
         for(int i=0;i<n-1;i++){
             if(v[i]>v[i+1]) {
-                flag = false;
+                is_sorted = false;
                 break;
             }
         }
-        if((flag && k==1) || k>1 )cout << "YES\n";
+        if(is_sorted || k>1)cout << "YES\n";
         else cout << "NO\n";
     }
     return 0;
