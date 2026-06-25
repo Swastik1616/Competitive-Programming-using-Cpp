@@ -18,6 +18,5 @@ int main(){
     else if(n%4==2) cout << "4\n";
     else if(n%4==3) cout << "2\n";
     else cout << "6\n";
-
     return 0;
 }
