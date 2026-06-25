@@ -1,6 +1,6 @@
 /*
 Problem - Given an array A of n elements and q queries of
-two integers L and R in each of them, calculate the value
+two llegers L and R in each of them, calculate the value
 of A[L] + 2*A[L+1] + 3*A[L+2] + ..... + (L-R+1)*A[R];
 1 <= L < R <= N
 */ 
@@ -12,11 +12,11 @@ using namespace std;
 using ll = long long;
 const ll MOD = 1e9 + 7;
 
-void bruteForce(vector<int> &v,int l, int r){
+void bruteForce(vector<ll> &v,ll l, ll r){
         l--;r--;
-        int x = 1;
-        int ans = 0;
-        for(int i=l;i<=r;i++){
+        ll x = 1;
+        ll ans = 0;
+        for(ll i=l;i<=r;i++){
             ans += x*v[i];
             x++;
         }
@@ -27,14 +27,23 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n,q;
+    ll n,q;
     cin >> n >> q;
-    vector<int> v(n);
-    for(int i=0;i<n;i++) cin >> v[i];
+    vector<ll> v(n+1);
+    for(ll i=1;i<=n;i++) cin >> v[i];
+
+    vector<ll> pre1(n+1,0),pre2(n+1,0);
+    for(ll i=1;i<=n;i++){
+        pre1[i] = pre1[i-1] + v[i]; // normal prefix sum array
+        pre2[i] = pre2[i-1] + (i*v[i]);
+    }   
+
     while(q--){
-        int l,r;
+        ll l,r;
         cin >> l >> r;
-        bruteForce(v,l,r);
+        //bruteForce(v,l,r);
+        cout << (pre2[r] - pre2[l-1]) - ((l-1)*(pre1[r] - pre1[l-1])) << "\n";
+        
     }
     return 0;
 }
