@@ -1,5 +1,5 @@
 // Problem Link - https://codeforces.com/contest/2240/problem/A
-
+// WA
 #include<bits/stdc++.h>
 #define ff first
 #define ss second
