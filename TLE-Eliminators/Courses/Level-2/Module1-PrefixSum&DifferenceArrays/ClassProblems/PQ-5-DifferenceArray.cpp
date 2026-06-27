@@ -33,7 +33,7 @@ void differenceArrayApproach(vector<ll>&v, ll n){
         ll l,r,x;
         cin >> l >> r >> x;
         diff[l] += x;
-        if(r!=n-1) diff[r+1] += (-1)*x;
+        if(r!=n-1) diff[r+1] -= x;
     }
     for(int i=1;i<n;i++) diff[i] += diff[i-1]; // prefix sum of Difference Array
     for(int i=0;i<n;i++) v[i] += diff[i]; // adding difference array to orignial array
