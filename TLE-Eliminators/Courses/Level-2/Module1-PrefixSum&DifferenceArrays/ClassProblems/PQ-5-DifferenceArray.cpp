@@ -36,8 +36,8 @@ void differenceArrayApproach(vector<ll>&v, ll n){
         if(r!=n-1) diff[r+1] -= x;
     }
     for(int i=1;i<n;i++) diff[i] += diff[i-1]; // prefix sum of Difference Array
-    for(int i=0;i<n;i++) v[i] += diff[i]; // adding difference array to orignial array
-    for(auto it:v) cout << it << " ";
+    for(int i=0;i<n;i++) cout << v[i] + diff[i] << " "; // adding difference array to orignial array
+    //for(auto it:v) cout << it << " ";
 }
 
 int main(){
