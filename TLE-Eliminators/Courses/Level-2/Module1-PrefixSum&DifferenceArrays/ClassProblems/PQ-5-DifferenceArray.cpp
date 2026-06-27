@@ -25,7 +25,7 @@ void bruteForce(vector<ll>&v, ll n){
     for(auto it:v) cout << it << " ";
 }
 
-void differenceArrayApproach(vector<ll>&v, ll n){
+void differenceArrayApproach(vector<ll>&v, ll n){ // SC - O(n) - changing vector is not allowed
     vector<int> diff(n,0);
     ll q;
     cin >> q;
