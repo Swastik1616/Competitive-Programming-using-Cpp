@@ -25,18 +25,18 @@ void bruteForce(vector<ll>&v, ll n){
     for(auto it:v) cout << it << " ";
 }
 
-void diffA(vector<ll>&v, ll n){
-    vector<int> da(n,0);
+void differenceArrayApproach(vector<ll>&v, ll n){
+    vector<int> diff(n,0);
     ll q;
     cin >> q;
     while(q--){ // each query O(1) time
         ll l,r,x;
         cin >> l >> r >> x;
-        da[l] += x;
-        if(r!=n-1) da[r+1] += (-1)*x;
+        diff[l] += x;
+        if(r!=n-1) diff[r+1] += (-1)*x;
     }
-    for(int i=1;i<n;i++) da[i] += da[i-1]; // prefix sum of Difference Array
-    for(int i=0;i<n;i++) v[i] += da[i]; // adding difference array to orignial array
+    for(int i=1;i<n;i++) diff[i] += diff[i-1]; // prefix sum of Difference Array
+    for(int i=0;i<n;i++) v[i] += diff[i]; // adding difference array to orignial array
     for(auto it:v) cout << it << " ";
 }
 
@@ -49,6 +49,6 @@ int main(){
     vector<ll> v(n);
     for(auto &it:v) cin >> it;
     //bruteForce(v,n);
-    diffA(v,n);
+    differenceArrayApproach(v,n);
     return 0;
 }
