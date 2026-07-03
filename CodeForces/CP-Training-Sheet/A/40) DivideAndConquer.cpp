@@ -1,4 +1,3 @@
-
 // Problem Link - https://codeforces.com/contest/2241/problem/A
  
 #include<bits/stdc++.h>
@@ -14,16 +13,20 @@ void solve(){
         if(a%b==0) cout << "YES\n";
         else cout << "NO\n";
 }
- 
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
- 
+
+void TCs(){
     int t;
     cin >> t;
     while(t--){
         solve();
     }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+ 
+    TCs();
     
     return 0;
 }
