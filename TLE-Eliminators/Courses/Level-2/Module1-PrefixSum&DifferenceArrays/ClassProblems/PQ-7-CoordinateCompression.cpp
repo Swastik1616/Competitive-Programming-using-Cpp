@@ -19,10 +19,10 @@ void solve(){
     vector<ll> v(n);
     for(auto &it:v) cin >> it;
     sort(v.begin(),v.end());
-    
+
     map<ll,ll> mp;
     for(int i=0;i<n;i++){
-        mp[v[i]] = i;
+        if(mp.find(v[i]) == mp.end()) mp[v[i]] = i;
     }
     for(auto it:mp) cout << it.ff << " -> " << it.ss << "\n";
 }
