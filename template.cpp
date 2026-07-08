@@ -23,8 +23,8 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    //TCs();
-    //solve();
+    TCs();
+    solve();
     
     return 0;
 }
