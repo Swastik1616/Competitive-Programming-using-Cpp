@@ -7,6 +7,7 @@ using namespace std;
 using ll = long long;
 const ll MOD = 1e9 + 7;
 
+/*
 void solve(){
     int n;
     cin >> n;
@@ -21,6 +22,21 @@ void solve(){
 
     if(odd.size()&1) cout << "NO\n";
     else cout << "YES\n";
+}
+*/
+
+void solve(){
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(auto &it:v) cin >> it;
+
+    int odd_c = 0;
+    for(auto it:v) if(it&1) odd_c++;
+
+    if(odd_c&1) cout << "NO\n";
+    else cout << "YES\n";
+    
 }
 
 void TCs(){
