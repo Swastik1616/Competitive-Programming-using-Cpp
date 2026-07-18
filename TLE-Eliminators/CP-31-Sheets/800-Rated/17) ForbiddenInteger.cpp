@@ -17,19 +17,18 @@ void solve(){
         cout << "\n";
     }
     else{
-        if(n&1 || k==1){
-            if(k!=n) cout << "NO\n";
-            else{
-                cout << "YES\n";
-                cout << 1 << "\n";
-                cout << n << "\n";
-            } 
-        }
-        else{
+        if(k==1 || (k==2 && n&1)) cout << "NO\n";
+        else if(!(n&1)){
             cout << "YES\n";
             cout << n/2 << "\n";
             for(int i=1;i<=n/2;i++) cout << 2 << " ";
             cout << "\n";
+        }
+        else{
+            cout << "YES\n";
+            cout << (n-3)/2 + 1 << "\n";
+            for(int i=1;i<=(n-3)/2;i++) cout << 2 << " ";
+            cout << 3 << "\n";
         }
     }
 }
