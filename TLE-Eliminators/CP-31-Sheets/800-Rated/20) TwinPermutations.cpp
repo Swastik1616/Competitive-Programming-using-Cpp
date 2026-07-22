@@ -1,4 +1,4 @@
-// Problem Link - 
+// Problem Link - https://codeforces.com/problemset/problem/1831/A
 
 #include<bits/stdc++.h>
 #define ff first
@@ -12,7 +12,7 @@ void solve(){
     cin >> n;
     vector<int> v(n);
     for(auto &it:v) cin >> it;
-    for(int i=0;i<n;i++) cout << n + 1 - v[i] << " ";
+    for(auto it:v) cout << n + 1 - it << " ";
     cout << "\n";
 }
 
