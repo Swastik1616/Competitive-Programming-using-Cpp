@@ -7,22 +7,33 @@ using namespace std;
 using ll = long long;
 const ll MOD = 1e9 + 7;
 
+// void solve(){
+//     int n;
+//     cin >> n;
+//     vector<int> v(n),temp;
+//     for(auto &it:v) cin >> it;
+//     int c = 0;
+//     for(auto it:v){
+//         if(it==0) c++;
+//         else c = 0;
+//         temp.push_back(c);
+//     }
+//     int ans = 0;
+//     for(auto it:temp) ans = max(ans,it);
+//     cout << ans << "\n";
+// }
+
 void solve(){
     int n;
     cin >> n;
-    vector<int> v(n),temp;
+    vector<int> v(n);
     for(auto &it:v) cin >> it;
-    int c = 0;
+    int c = 0,ans = 0;
     for(auto it:v){
         if(it==0) c++;
-        else{
-            temp.push_back(c);
-            c = 0;
-        }
+        else c = 0;
+        ans = max(ans,c);
     }
-    temp.push_back(c); // if arr contains only 0's
-    int ans = 0;
-    for(auto it:temp) ans = max(ans,it);
     cout << ans << "\n";
 }
 
