@@ -19,7 +19,7 @@ void solve(){
         if(x>=0) a-=x;
         ans+=x;
         if(a==c && b==d) cout << ans << "\n";
-        else cout << "-1\n";
+        else cout << "-1\n"; 
     }
 }
 
