@@ -1,11 +1,16 @@
 // Problem Link - 
 
 #include<bits/stdc++.h>
-#define ff first
-#define ss second
+
 using namespace std;
 using ll = long long;
 const ll MOD = 1e9 + 7;
+
+#define ff first
+#define ss second
+#define vi vector<int>
+#define vll vector<ll>
+#define vin for(auto &it:v) cin >> it
 
 void solve(){
 
