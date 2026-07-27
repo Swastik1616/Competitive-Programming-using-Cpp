@@ -68,5 +68,6 @@
         "typeinfo": "cpp",
         "valarray": "cpp"
     },
-    "java.dependency.syncWithFolderExplorer": true
+    "java.dependency.syncWithFolderExplorer": true,
+    "C_Cpp.errorSquiggles": "disabled"
 }
