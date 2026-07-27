@@ -145,11 +145,57 @@ void solve4(){
     }
 }
 
+void solve5(){ 
+    int n;
+    cin >> n;
+    vi v(n);
+    vin;
+    
+    int tc = 0;
+    for(auto it:v) if(it==2) tc++;
+
+    int cc = 0;
+    int ans = -1;
+    for(int i=0;i<n;i++){ 
+        if(v[i]==2) cc++;
+        if(cc==tc-cc){ 
+            ans = i+1;
+            break;
+        }
+    }
+    cout << ans << "\n";
+}
+
+void solve6(){ 
+    int n;
+    cin >> n;
+    vi v(n);
+    vin;
+    
+    int tc = 0;
+    for(auto it:v) if(it==2) tc++;
+
+    int cc = 0;
+    int ans = -1;
+    
+    if(tc&1) cout << "-1\n";
+    else{
+        for(int i=0;i<n;i++){ 
+            if(v[i]==2) cc++;
+            if(tc!=1 && cc==tc/2){ 
+                ans = i+1;
+                break;
+            }
+        }
+        cout << ans << "\n";
+    }
+}
+
 void TCs(){
     int t;
     cin >> t;
     while(t--){
-        solve4();
+        solve6();
     }
 }
 
