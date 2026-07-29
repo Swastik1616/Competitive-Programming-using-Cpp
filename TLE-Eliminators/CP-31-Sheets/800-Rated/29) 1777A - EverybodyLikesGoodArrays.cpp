@@ -12,7 +12,7 @@ const ll MOD = 1e9 + 7;
 #define vll vector<ll>
 #define vin for(auto &it:v) cin >> it
 
-void solve(){
+void solve1(){
     int n;
     cin >> n;
     vi v(n);
@@ -24,11 +24,35 @@ void solve(){
     cout << ans << "\n";
 }
 
+void solve2(){
+    int n;
+    cin >> n;
+    vi v(n);
+    vin;
+    int ans = 0;
+    for(int i=0;i<n-1;i++){
+        if((v[i]%2 == v[i+1]%2)) ans++;
+    }
+    cout << ans << "\n";
+}
+
+void solve3(){
+    int n;
+    cin >> n;
+    vi v(n);
+    vin;
+    int ans = 0;
+    for(int i=0;i<n-1;i++){
+        if((v[i]&1) == (v[i+1]&1)) ans++;
+    }
+    cout << ans << "\n";
+}
+
 void TCs(){
     int t;
     cin >> t;
     while(t--){
-        solve();
+        solve3();
     }
 }
 
