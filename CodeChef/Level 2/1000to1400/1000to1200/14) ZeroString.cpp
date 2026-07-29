@@ -17,7 +17,6 @@ int main() {
             if(it=='1') c1++;
             else c2++;
         }
-        if(c1==n) cout << "1\n";
-        else cout << min(c1,c2+1) << "\n";
+        cout << min(c1,c2+1) << "\n";
     }
 }
