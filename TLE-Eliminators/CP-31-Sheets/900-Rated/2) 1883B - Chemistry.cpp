@@ -21,8 +21,8 @@ void solve(){
     for(auto it:s) mp[it]++;
     int c = 0;
     for(auto it:mp) if(it.ss&1) c++;
-    if(c>k+1) cout << "NO\n";
-    else cout << "YES\n";
+    if(c<=k+1) cout << "YES\n";
+    else cout << "NO\n";
 }
 
 void TCs(){
