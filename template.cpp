@@ -29,7 +29,7 @@ int main(){
     cin.tie(NULL);
 
     TCs();
-    solve();
+    //solve();
     
     return 0;
 }
