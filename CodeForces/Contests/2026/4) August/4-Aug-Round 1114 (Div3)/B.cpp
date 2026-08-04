@@ -1,0 +1,49 @@
+// Problem Link - https://codeforces.com/contest/2254/problem/B
+// WA
+#include<bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+const ll MOD = 1e9 + 7;
+
+#define ff first
+#define ss second
+#define vi vector<int>
+#define vll vector<ll>
+#define vin for(auto &it:v) cin >> it
+
+void solve(){
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    string ans = "";
+    int i = 0, j = i + 1;
+    while(i<n && j<n){
+        while(s[i]==s[j]){
+            j++;
+            ans += s[i];
+        }
+        i++;
+        j++;
+    }
+    cout << s.size() - ans.size() - 1 << "\n";
+}
+
+void TCs(){
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    TCs();
+    //solve();
+    
+    return 0;
+}
