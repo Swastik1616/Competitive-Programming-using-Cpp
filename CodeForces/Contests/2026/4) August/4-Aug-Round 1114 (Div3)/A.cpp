@@ -11,23 +11,13 @@ const ll MOD = 1e9 + 7;
 #define vi vector<int>
 #define vll vector<ll>
 #define vin for(auto &it:v) cin >> it
+#define mysort sort(v.begin(),v.end())
 
 void solve(){
     vi v(3);
     vin;
-    int ans = 0;
-    while(1){
-        if(v[0]==v[1] || v[0]==v[2] || v[1]==v[2]) break;
-        int max_i = 0, min_i = 0;
-        for(int i=1;i<3;i++){
-            if(v[i] > v[max_i]) max_i = i;
-            if(v[i] < v[min_i]) min_i = i;
-        }
-        v[max_i]--;
-        v[min_i]++;
-        ans++;
-    }
-    cout << ans << "\n";
+    mysort;
+    cout << min(v[1]-v[0],v[2]-v[1]) << "\n";
 }
 
 void TCs(){
