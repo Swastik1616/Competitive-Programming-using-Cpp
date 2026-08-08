@@ -1,0 +1,46 @@
+// Problem Link - https://codeforces.com/contest/2253/problem/A
+
+#include<bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+const ll MOD = 1e9 + 7;
+
+#define ff first
+#define ss second
+#define vi vector<int>
+#define vll vector<ll>
+#define vin for(auto &it:v) cin >> it
+
+void solve(){
+    int n;
+    cin >> n;
+    if(n==2) cout << "YES\n";
+    else{
+        int c1 = 0, c2 = n;
+        for(int i=2;i<=n;i++){
+            if((n+1)%i==0) c1++;
+            else c2--;
+        }
+        if(c1==n || c2==1) cout << "YES\n";
+        else cout << "NO\n";
+    }
+}
+
+void TCs(){
+    int t;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    TCs();
+    //solve();
+    
+    return 0;
+}
