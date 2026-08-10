@@ -15,12 +15,9 @@ const ll MOD = 1e9 + 7;
 void solve(){
     ll n;
     cin >> n;
-    ll i=1;
-    for(;i*i<=n;){
-        if(n%i==0) i++;
-        else break;
-    }
-    cout << i - 1 << "\n";
+    ll i = 1;
+    while(n%i==0) i++;
+    cout << i-1 << "\n";
 }
 
 void TCs(){
