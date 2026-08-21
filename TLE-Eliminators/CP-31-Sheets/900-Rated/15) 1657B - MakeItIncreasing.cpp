@@ -14,17 +14,17 @@ const ll MOD = 1e9 + 7;
 void solve(){
     int n;
     cin >> n;
-    vi v(n);
-    for(auto &it:v) cin >> it;  
+    vi a(n);
+    for(auto &it:a) cin >> it;  
 
     int ans = 0;
     for(int i=n-2;i>=0;i--){
-        while(v[i]>=v[i+1]){
+        while(a[i]>=a[i+1]){
             ans++;
-            v[i] /= 2;
-            if(v[i]==0) break;
+            a[i] /= 2;
+            if(a[i]==0) break;
         }
-        if(v[i]==0 && v[i+1]==0){
+        if(a[i]==0 && a[i+1]==0){
             ans = -1;
             break;
         }
