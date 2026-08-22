@@ -12,10 +12,10 @@ const ll MOD = 1e9 + 7;
 #define vll vector<ll>
 
 void solve(){
-    ll n;
-    cin >> n;
-    if(n<4 || n&1) cout << "-1\n";
-    else cout << (n+5)/6 << " " << n/4 << "\n";
+    ll x;
+    cin >> x;
+    if(x<4 || x&1) cout << "-1\n";
+    else cout << (x+5)/6 << " " << x/4 << "\n";
 }
 
 void TCs(){
