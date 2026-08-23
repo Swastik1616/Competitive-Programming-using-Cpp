@@ -10,6 +10,7 @@ const ll MOD = 1e9 + 7;
 #define ss second
 #define vi vector<int>
 #define vll vector<ll>
+#define vpi vector<pair<int,int>> 
 
 void solve(){
 
